@@ -1,9 +1,9 @@
 import React from "react";
 
-import { useGetJson } from "react-rest-api";
+import { useGet } from "react-rest-api";
 
 export const ComponentWithUseGetJson = ({ url }) => {
-  const { loading, result, error } = useGetJson(url);
+  const { loading, result, error } = useGet(url);
 
   if (error) {
     return error.toString();

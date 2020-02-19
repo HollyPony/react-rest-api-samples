@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ApiConsumer } from "react-rest-api";
+import { ApiConsumer, withApi } from "react-rest-api";
 
 export class ComponentWithConsumer extends React.Component {
   state = { loading: true, result: undefined, error: undefined };
@@ -10,7 +10,6 @@ export class ComponentWithConsumer extends React.Component {
 
     api
       .get(url)
-      .then(res => res.json())
       .then(result => this.setState({ loading: false, result }))
       .catch(error => this.setState({ loading: false, error }));
   }
@@ -35,5 +34,7 @@ export const ComponentWithConsumerWrapper = props => (
     {api => <ComponentWithConsumer api={api} {...props} />}
   </ApiConsumer>
 );
+
+export const ComponentWithWithApi = withApi(ComponentWithConsumer);
 
 export default ComponentWithConsumerWrapper;

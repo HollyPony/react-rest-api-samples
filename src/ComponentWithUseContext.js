@@ -10,7 +10,6 @@ export const ComponentWithUseContext = ({ url }) => {
   useEffect(() => {
     api
       .get(url)
-      .then(res => res.json())
       .then(res => setResult(res))
       .catch(err => setError(JSON.stringify(err, null, 2)));
   }, [api]);

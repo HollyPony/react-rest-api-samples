@@ -14,7 +14,7 @@ export const ComponentWithUseContext = ({ url }) => {
       .catch(err => setError(JSON.stringify(err, null, 2)));
   }, [api]);
 
-  return error || (result ? result.name : "loading ....");
+  return error || (result ? result.name : "loading ...");
 };
 
 export default ComponentWithUseContext;

@@ -6,7 +6,7 @@ export const ComponentWithUseGetJson = ({ url }) => {
   const { loading, result, error } = useGet(url);
 
   if (error) {
-    return error.toString();
+    return JSON.stringify(error, null, 2);
   }
   return loading ? "loading ..." : result.name || JSON.stringify(result);
 };

@@ -25,7 +25,7 @@ export class ComponentWithConsumer extends React.Component {
       return result.name;
     }
 
-    return "loading";
+    return "loading ...";
   }
 }
 

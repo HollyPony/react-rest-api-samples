@@ -4,7 +4,7 @@ export const ComponentWithUseApi = ({ url }) => {
   const { loading, result, error } = useFetch(url);
 
   if (error) {
-    return error.toString();
+    return JSON.stringify(error, null, 2);
   }
   return loading
     ? "loading ..."
